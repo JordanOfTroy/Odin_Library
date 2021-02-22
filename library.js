@@ -3,7 +3,7 @@ let myLibrary = [{
     author: "Ghost Writer",
     pages: 1000,
     info: function () {
-        return `${this.title} by ${this.author}, ${this.pages} pages.`
+        return `${this.title} by ${this.author}, ${this.pages} pages`
     }
 },
 {
@@ -11,7 +11,7 @@ let myLibrary = [{
     author: "Mr. E",
     pages: 2020,
     info: function () {
-        return `${this.title} by ${this.author}, ${this.pages} pages.`
+        return `${this.title} by ${this.author}, ${this.pages} pages`
     }
 }
 ]
