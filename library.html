@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="library.css">
 </head>
 <body>
-    <!-- <button onclick={pleaseWork()}>WORK</button> -->
     <div>
-        <input type="text" required class="newBookInfo" placeholder="Title"><br>
-        <input type="text" required class="newBookInfo" placeholder="Author"><br>
-        <input type="text" required class="newBookInfo" placeholder="Pages"><br>
-        <button class="add_book" type="submit" onclick={addBookToLibrary()} >Add Book</button>
+        <div id="bookInfoInputs">
+            <input type="text" required class="newBookInfo" placeholder="Title"><br>
+            <input type="text" required class="newBookInfo" placeholder="Author"><br>
+            <input type="text" required class="newBookInfo" placeholder="Pages"><br>
+        </div>
+        <button id="addBookBtn" onclick={showInputs()}>Add New Book</button>
+        <button id="submitBookBtn" type="submit" onclick={addBookToLibrary()} >Submit New Book</button>
     </div>
     <div id="booklist"></div>
 </body>
