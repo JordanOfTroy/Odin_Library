@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+    <!-- <button onclick={pleaseWork()}>WORK</button> -->
+    <div>
+        <input type="text" required class="newBookInfo" placeholder="Title"><br>
+        <input type="text" required class="newBookInfo" placeholder="Author"><br>
+        <input type="text" required class="newBookInfo" placeholder="Pages"><br>
+        <button class="add_book" type="submit" onclick={addBookToLibrary()} >Add Book</button>
+    </div>
+    <div id="booklist"></div>
+</body>
+</html>
+<script src="library.js"></script>
