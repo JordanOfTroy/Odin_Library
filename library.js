@@ -4,7 +4,8 @@ let myLibrary = [{
     pages: 1000,
     info: function () {
         return `${this.title} by ${this.author}, ${this.pages} pages`
-    }
+    },
+    read : false
 },
 {
     title: "Placeholder",
@@ -12,7 +13,8 @@ let myLibrary = [{
     pages: 2020,
     info: function () {
         return `${this.title} by ${this.author}, ${this.pages} pages`
-    }
+    },
+    read : true
 }
 ]
 
@@ -22,7 +24,8 @@ function Book (title, author, pages) {
     this.pages = pages
     this.info = function () {
         return `${title} by ${author}, ${pages} pages.`
-    }
+    },
+    this.read = false
 
 }
 
@@ -60,7 +63,6 @@ function checkValue (arr) {
 }
 
 function addBookToLibrary () {
-
     let info = document.getElementsByClassName("newBookInfo")
     if (!checkValue(info)) {
         alert('Please enter the required info.')
@@ -77,17 +79,40 @@ function deleteBook (bookIndex) {
     showBooks(myLibrary)
 }
 
+
+function updateReadStatus (ind) {
+    // console.log('I am working', ind)
+    let book = myLibrary[ind]
+    if (book.read) {
+        book.read = false
+    } else {
+        book.read = true
+    }
+    showBooks(myLibrary)
+}
+
 function showBooks (arr) {
+    console.log('myLibrary:', myLibrary)
    let bookList = document.getElementById("booklist")
-//    console.log(bookList)
    bookList.innerHTML = arr.map((book, i) => {
-       return `<div class="book_card">
-                    <p>${book.title} by ${book.author}, ${book.pages} pages</p>
+       if (book.read) {
+        return `<div class="book_card">
+                <p>${book.title} by ${book.author}, ${book.pages} pages, READ</p>
                 </div>
                 <br/>
-                <button onClick={deleteBook(${i})}>Remove Book</button>`
+                <button onClick={deleteBook(${i})}>Remove Book</button>
+                <button onClick={updateReadStatus(${i})}>Mark as Unread</button>`
+       } else {
+           return `<div class="book_card">
+                    <p>${book.title} by ${book.author}, ${book.pages} pages UNREAD</p>
+                    </div>
+                    <br/>
+                    <button onClick={deleteBook(${i})}>Remove Book</button>
+                    <button onClick={updateReadStatus(${i})}>Mark as Read</button>`
+       }
    })
 }
+
 
 
 function pleaseWork () {
