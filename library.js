@@ -42,7 +42,7 @@ function hideInputs () {
 }
 
 function clearInputs (arr) {
- console.log(arr)
+//  console.log(arr)
  for (i=0; i < arr.length; i++) {
      arr[i].value = ""
  }
@@ -53,12 +53,12 @@ function checkValue (arr) {
     let valid = true
     for (let i = 0; i < arr.length; i++) {
         const ele = arr[i]
-        console.log(ele.value)
+        // console.log(ele.value)
         if (!ele.value) {
             valid = false
         }
     }
-    console.log('valid:', valid)
+    // console.log('valid:', valid)
     return valid
 }
 
@@ -92,7 +92,7 @@ function updateReadStatus (ind) {
 }
 
 function showBooks (arr) {
-    console.log('myLibrary:', myLibrary)
+    // console.log('myLibrary:', myLibrary)
    let bookList = document.getElementById("booklist")
    bookList.innerHTML = arr.map((book, i) => {
        if (book.read) {
